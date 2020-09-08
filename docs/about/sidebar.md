@@ -1,8 +1,8 @@
 ---
-title: '关于2'
+# sidebar: auto
 ---
 
-# 热爱生活,喜欢睡觉 ABOUT 2
+# SIDE BAR 学习
 
 ## 1. 一级标题
 
