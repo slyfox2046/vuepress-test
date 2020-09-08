@@ -7,6 +7,7 @@ module.exports = {
     ['link', { rel: 'icon', href: '/assets/img/favicon.ico' }]
   ],
   themeConfig: {
+    lastUpdated:"更新时间",
     logo: '/assets/img/logo.png',
     // navbar:false,
     nav: [
