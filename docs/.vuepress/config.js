@@ -1,13 +1,31 @@
+const moment = require('moment');
+
 module.exports = {
+  base:'/vuepress-test/',
+  plugins: [
+    [
+      '@vuepress/last-updated',
+      {
+        transformer: (timestamp, lang) => {
+          // console.log(lang)
+          // 不要忘了安装 moment
+          const moment = require('moment');
+          moment.locale('zh-cn');
+          // return moment(timestamp).format('yyyy-MM-DD ')
+          return moment(timestamp).format('LLLL');
+        },
+      },
+    ],
+  ],
   title: '就是这个Title',
-  description: "这个是描述",
+  description: '这个是描述',
   head: [
     ['meta', { name: 'author', content: 'sly' }],
     ['meta', { name: 'keywords', content: 'vuepress介绍,vuepress说明,飞跃高山' }],
-    ['link', { rel: 'icon', href: '/assets/img/favicon.ico' }]
+    ['link', { rel: 'icon', href: '/assets/img/favicon.ico' }],
   ],
   themeConfig: {
-    lastUpdated:"更新时间",
+    lastUpdated: '更新时间',
     logo: '/assets/img/logo.png',
     // navbar:false,
     nav: [
@@ -22,7 +40,7 @@ module.exports = {
             text: 'Group1',
             items: [
               { text: 'Home', link: '/' },
-              { text: 'About', link: '/about/' },
+              { text: 'About3', link: '/about/about3' },
             ],
           },
           {
@@ -58,11 +76,12 @@ module.exports = {
       '/css/': ['/css/c-aaa', '/css/c-bbb', '/css/c-ccc'],
       //   匹配规则从上往下的
       '/': [
-        '',        /* / */
-        'about',    /* /about.html */
-        'about'    /* /about.html */
+        '' /* / */,
+        // 'about',    /* /about.html */
         // 'contact', /* /contact.html */
-      ]
+        'about2' /* /about.html */,
+      ],
+      // '/css/': ['/css/c-aaa', '/css/c-bbb', '/css/c-ccc'],
     },
   },
 };
