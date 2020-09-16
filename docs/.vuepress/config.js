@@ -1,7 +1,7 @@
 const moment = require('moment');
 
 module.exports = {
-  base:'/vuepress-test/',
+  base: '/vuepress-test/',
   plugins: [
     [
       '@vuepress/last-updated',
@@ -13,6 +13,16 @@ module.exports = {
           moment.locale('zh-cn');
           // return moment(timestamp).format('yyyy-MM-DD ')
           return moment(timestamp).format('LLLL');
+        },
+      },
+    ],
+    [
+      '@vuepress/pwa',
+      {
+        serviceWorker: true,
+        updatePopup: {
+          message: '发现新内容可用.',
+          buttonText: '刷新',
         },
       },
     ],
